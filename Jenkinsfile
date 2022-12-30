@@ -26,7 +26,7 @@ pipeline {
 				echo "${BUILD_PATH}: Build path"
 				echo '"${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}"'
 				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}" -MyTestOnly -quit -batchmode -logFile"
-				sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -executeMethod UnityBuild.BuildPlatforms -buildPath "${BUILD_PATH}" -windows64 -batchmode -nographics -quit"
+				sh "${UNITY_PATH} -projectPath ${UNITY_Project} -executeMethod UnityBuild.BuildPlatforms -buildPath ${BUILD_PATH} -windows64 -batchmode -nographics -quit"
 			}
 		}
 		
