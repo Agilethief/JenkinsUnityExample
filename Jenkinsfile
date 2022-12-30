@@ -1,6 +1,6 @@
 // Vars
 buildName = "Gamebuild ${BUILD_NUMBER}"
-UNITY_PATH = "~/Unity/Hub/Editor/2022.1.17f1/Editor/Unity"
+UNITY_PATH = "/home/agile/Unity/Hub/Editor/2022.1.17f1/Editor/Unity"
 UNITY_Project = "/var/lib/jenkins/workspace/UnityJenkinsExample/UnityJenkinsExample"
 BUILD_PATH  = "/var/lib/jenkins/workspace/UnityJenkinsExample/UnityJenkinsExample"
 
@@ -21,7 +21,8 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Build stage started'
-				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
+				echo ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
+				sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
 			}
 		}
 		
