@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                echo 'Build process starting: ${buildName}'
+                echo "Build process starting: ${buildName}"
             }
         }
 		
