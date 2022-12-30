@@ -14,13 +14,14 @@ pipeline {
         stage('Start') {
             steps {
                 echo "Build process starting: ${buildName}"
+				sh "whoami"
             }
         }
 		
 		stage('Build') {
 			steps {
 				echo 'Build stage started'
-				sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
+				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
 			}
 		}
 		
