@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				echo 'Build stage started'
 				echo '"${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}"'
-				sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
+				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
 			}
 		}
 		
