@@ -1,3 +1,5 @@
+buildName = "Gamebuild ${BUILD_NUMBER}"
+
 pipeline {
 	parameters {
 		booleanParam(name: 'SEND_TO_DISCORD', defaultValue: true, description: 'Push a post to discord, letting us know how the build went.')
@@ -5,11 +7,17 @@ pipeline {
 
     agent any
     stages {
-        stage('Hello') {
+        stage('Start') {
             steps {
-                echo 'Hello World and github push? This should do a build!'
+                echo 'Build process starting: ${buildName}'
             }
         }
+		
+		stage('Build') {
+			steps {
+				
+			}
+		}
     }
 	
 	// This is where all the end of work stuff is reported (and typically posted somewhere like discord)
