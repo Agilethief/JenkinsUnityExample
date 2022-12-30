@@ -2,7 +2,8 @@
 buildName = "Gamebuild ${BUILD_NUMBER}"
 UNITY_PATH = "/home/agile/Unity/Hub/Editor/2022.1.17f1/Editor/Unity"
 UNITY_Project = "/var/lib/jenkins/workspace/UnityJenkinsExample/UnityJenkinsExample"
-BUILD_PATH  = "/var/lib/jenkins/workspace/UnityJenkinsExample/UnityJenkinsExample"
+//BUILD_PATH  = "/var/lib/jenkins/workspace/UnityJenkinsExample/UnityJenkinsExample"
+BUILD_PATH  = "/unity/build"
 
 pipeline {
 	parameters {
@@ -24,7 +25,8 @@ pipeline {
 				echo "${UNITY_PATH}: Unity path"
 				echo "${BUILD_PATH}: Build path"
 				echo '"${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}"'
-				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}""
+				//sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -nographics -buildWindows64Player "${BUILD_PATH}" -MyTestOnly -quit -batchmode -logFile"
+				sh ""${UNITY_PATH}" -projectPath "${UNITY_Project}" -executeMethod UnityBuild.BuildPlatforms -buildPath "${BUILD_PATH}" -windows64 -batchmode -nographics -quit"
 			}
 		}
 		
